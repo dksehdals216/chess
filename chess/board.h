@@ -1,23 +1,29 @@
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARD_H_
+#define BOARD_H_
 
 #include <iostream>
 
 
 class Board
 {
-public:
-   
-    Board(){}
+    int board[8][8] = {
+        {'-2', '-3', '-4', '-5', '-6', '-4', '-3', '-2'},
+        {'-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1'},
+        {'0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0'},
+        {'1', '1', '1', '1', '1', '1', '1', '1'},
+        {'2', '3', '4', '5', '6', '4', '3', '2'},
+    };
 
-    void setBoard();
-    void drawBoard(); 
-    char posQuery();
+	public:
 
-private: 
-    const int board_size = 8;
-    int board[board_size][board_size];
-}
+	    void setBoard();
+	    void drawBoard(); 
+	    char posQuery(); 
+
+};
 
 
-#endif BOARD_H
+#endif 

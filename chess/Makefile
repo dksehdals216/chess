@@ -6,10 +6,16 @@ MAINSRC		= main.cpp
 MAINOBJ		= ${MAINSRC:.cpp=.o}
 
 SRCS		=	\
-	
+	board.cpp 	\
+
 
 INCLUDDES = \
-
+	game.h	\
+	board.h	\
+	move.h	\
+	piece.h	\
+	player.h	\
+	square.h	\
 
 
 OBJS		= ${SRCS:.cpp=.o}

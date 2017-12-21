@@ -15,6 +15,8 @@ public:
     bool getTurn();
 
 private:
+	
+	bool cond = false;
     bool turn = 0;
 }
 
