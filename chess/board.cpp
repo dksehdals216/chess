@@ -2,20 +2,22 @@
 #include <iostream>
 
 #include "board.h"
-#define board_size 9
 
 
-/*
-void Board::drawBoard()
+void Board::drawBoard(const std::array<std::array<int, 8>, 8>& n, int size)
 {
     std::cout << "\n" << std::endl;
-
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < size; i++)
     {
-        for(int j = 0; j < 8; i++)
+        for(int j = 0; j< size; j++)
         {
-            std::cout << board[i][j] << std::endl;
+            std::cout << n[i][j];
         }
+        std::cout << std::endl;
     }
 }
-*/
+    
+void Board::setBoard()
+{
+    drawBoard(board, 8);
+}

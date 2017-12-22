@@ -10,13 +10,12 @@ SRCS		=	\
 
 
 INCLUDDES = \
-	game.h	\
 	board.h	\
-	move.h	\
-	piece.h	\
-	player.h	\
-	square.h	\
-
+#	move.h	\
+#	piece.h	\
+#	player.h	\
+#	square.h	\
+#	game.h	\
 
 OBJS		= ${SRCS:.cpp=.o}
 CFLAGS		= -Wall -std=c++17 
