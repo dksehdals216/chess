@@ -6,16 +6,20 @@ MAINSRC		= main.cpp
 MAINOBJ		= ${MAINSRC:.cpp=.o}
 
 SRCS		=	\
-	board.cpp 	\
-
+	Board.cpp 	\
+	Piece.cpp	\
+	Player.cpp	\
+	Move.cpp	\
+	Square.cpp	\
+	Game.cpp	\
 
 INCLUDDES = \
-	board.h	\
-#	move.h	\
-#	piece.h	\
-#	player.h	\
-#	square.h	\
-#	game.h	\
+	Board.h	\
+ 	Move.h	\
+	Piece.h	\
+	Player.h	\
+	Square.h	\
+	Game.h	\
 
 OBJS		= ${SRCS:.cpp=.o}
 CFLAGS		= -Wall -std=c++17 
