@@ -3,6 +3,7 @@
 #define PIECE_H
 
 #include "Square.h"
+#include "Move.h"
 
 class Piece
 {
@@ -14,16 +15,24 @@ class Piece
         void setPieceType(int piece_type);
         void setPieceSide(int color);
 
-        Square getPosition();
+        Square getPosition();       //todo::depends whether square is inherited
         void setPosition(Square coord);
 
 
-        void setPieceLife();
-        bool isPieceDead();
+
 
         void promote();
+
+        //todo::should piece inherit from square?
+
+        //todo::pieceMove calls functions from move.h with 2 pieces as params
+
+        //tood::pieceCapture called in pieceMove, if its captured takes care of piece state
         
     private:
+
+        void setPieceLife(bool life);
+        bool getPieceLife();
 
         //  Default chess int representation, with none as an empty square
         //  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1
@@ -34,6 +43,7 @@ class Piece
         
         pieceType piece;
         pieceSide side;
+
         Square piece_position;
         bool pieceLife;
 

@@ -34,6 +34,7 @@ void Board::clearBoardNone (std::array<std::array<Piece, 8>, 8> &inp_board)
     }
 }
 
+//todo:: set pieceLife as well
 void initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board)
 {
     int i;

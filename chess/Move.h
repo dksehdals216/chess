@@ -2,9 +2,7 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-#include "Piece.h"
 #include "Square.h"
-#include "Board.h"
 
 #include <string>
 
@@ -12,9 +10,10 @@ class Move
 {
 	public:
 	    
-	    bool validMove(Piece piece, Square dest_sq);
-
-}    
+	    bool validMove();	//todo::rewrite params and compatibility and functionality
+	    //with piece member functions and how its gonna work with source and dest
+	    
+};    
 
 
 #endif //MOVE_H

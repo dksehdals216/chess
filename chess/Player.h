@@ -11,8 +11,10 @@ class Player
 {
 public:
     
+    //note that player will call member functions of Board class each turn, 
+    // and will use that input to determine whether move was valid or not,
+    // and if turn has ended or not.
     bool win_cond();
-    bool moveValid(std::string alg_n);   //parse string into coordinates, then call function from moves/pieces
     void setTurn();
     bool getTurn();
 

@@ -17,7 +17,7 @@ class Board
 		void initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board);
 
 	    void setBoard();
-	    char askPiecePosition(); 
+	    char getPiecePosition(); 
 		//void drawBoard(std::array<std::array<int, 8>, 8> &n); 
 
 	private:
