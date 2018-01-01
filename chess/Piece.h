@@ -2,12 +2,21 @@
 #ifndef PIECE_H
 #define PIECE_H
 
+#include <string>
+
 #include "Square.h"
 #include "Move.h"
 
-class Piece
+class Piece : public Square
 {
     public:
+
+        //  Default chess int representation, with none as an empty square
+        //  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1
+        //  2 ,  3 ,  4 ,  5 ,  6 ,  4 ,  3 ,  2 
+
+        enum pieceType { none, pawn, rook, knight, bishop, queen, king};
+        enum pieceSide { white, black, neutral}; //white - 0,  black - 1
 
 
         bool pieceStatic();
@@ -15,10 +24,10 @@ class Piece
         void setPieceType(int piece_type);
         void setPieceSide(int color);
 
+        pieceType getPieceType();
+
         Square getPosition();       //todo::depends whether square is inherited
         void setPosition(Square coord);
-
-
 
 
         void promote();
@@ -34,18 +43,12 @@ class Piece
         void setPieceLife(bool life);
         bool getPieceLife();
 
-        //  Default chess int representation, with none as an empty square
-        //  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1
-        //  2 ,  3 ,  4 ,  5 ,  6 ,  4 ,  3 ,  2 
+        pieceType object_type;
+        pieceSide object_side;
 
-        enum pieceType { pawn, rook, bishop, knight, queen, king, none};
-        enum pieceSide { white, black}; //white - 0,  black - 1
-        
-        pieceType piece;
-        pieceSide side;
 
         Square piece_position;
-        bool pieceLife;
+        bool object_life;
 
 };
 

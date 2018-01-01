@@ -9,6 +9,6 @@ int main()
 {
 
 	Board * b = new Board();
-	b->setBoard();
+
 	
 }

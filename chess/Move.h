@@ -12,7 +12,11 @@ class Move
 	    
 	    bool validMove();	//todo::rewrite params and compatibility and functionality
 	    //with piece member functions and how its gonna work with source and dest
-	    
+	  
+	private:
+
+		
+
 };    
 
 

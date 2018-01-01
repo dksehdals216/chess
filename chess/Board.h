@@ -9,19 +9,21 @@
 class Board
 {
 
-	std::array<std::array<Piece, 8>, 8> board;
 			
 	public:
+		std::array<std::array<Piece, 8>, 8> board;
+
+		Board ();
 
 		void clearBoardNone(std::array<std::array<Piece, 8>, 8>& inp_board);
-		void initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board);
 
-	    void setBoard();
-	    char getPiecePosition(); 
+	    void setBoard(int initX, int initY, int destX, int destY);
+	    char getPiecePosition(Piece piece); 
 		//void drawBoard(std::array<std::array<int, 8>, 8> &n); 
 
 	private:
-
+		
+		void initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board);
 		void drawBoard(std::array<std::array<Piece, 8>, 8>& inp_board); 
 
 };

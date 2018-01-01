@@ -14,6 +14,11 @@ class Game
 		//todo::create private variable to keep track of # of turns and moves, time etc
 		//todo::keep track of moves made, possibly algebraic notation
 
+	private:
+
+		int n_turn = 0;
+		
+
 };
 
 

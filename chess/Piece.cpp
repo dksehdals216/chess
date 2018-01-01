@@ -6,31 +6,31 @@ void Piece::setPieceType(int piece_type)
 	switch(piece_type)
 	{
 		case(0):
-			piece = none;
+			object_type = none;
 			setPieceLife(0);
 			break;
 		case(1):
-			piece = pawn; 
+			object_type = pawn; 
 			setPieceLife(1);
 			break;
 		case(2):
-			piece = rook;
+			object_type = rook;
 			setPieceLife(1);
 			break;
 		case(3):
-			piece = knight;
+			object_type = knight;
 			setPieceLife(1);
 			break;
 		case(4):
-			piece = bishop;
+			object_type = bishop;
 			setPieceLife(1);
 			break;
 		case(5):
-			piece = queen;
+			object_type = queen;
 			setPieceLife(1);
 			break;
 		case(6):
-			piece = king;
+			object_type = king;
 			setPieceLife(1);
 			break;
 	}
@@ -38,29 +38,37 @@ void Piece::setPieceType(int piece_type)
 
 void Piece::setPieceSide(int color)
 {
-	if (color > 0)
+	if (color ==  1)
 	{
-		side = black;
+		object_side = black;
 	}
-	else 
+	else if (color == 0)
 	{
-		side = white;
+		object_side = white;
 	}
+	else
+	{
+		object_side = neutral;
+	}
+}
+
+Piece::pieceType Piece::getPieceType()
+{
+	return object_type;
 }
 
 void Piece::setPieceLife(bool life)
 {
-	pieceLife = life;
+	object_life = life;
 }
 
 bool Piece::getPieceLife()
 {
-	return pieceLife;
+	return object_side;
 }
 
 void Piece::promote()
 {
-	setPieceType(6);
-
+	setPieceType(6);	//todo::rewrite this
 }
 

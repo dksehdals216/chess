@@ -5,7 +5,7 @@
 #include <string>
 
 #include "Board.h"
-#include "Game.h"
+
 
 class Player
 {
@@ -14,13 +14,14 @@ public:
     //note that player will call member functions of Board class each turn, 
     // and will use that input to determine whether move was valid or not,
     // and if turn has ended or not.
-    bool win_cond();
+    bool checkWinCondition();
     void setTurn();
     bool getTurn();
 
+
 private:
 	
-	bool cond = false;
+	bool win_condition = false;
     bool turn = 0;
 };
 
