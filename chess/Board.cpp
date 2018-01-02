@@ -4,7 +4,7 @@
 
 #include "Board.h"
 
-Board::Board()
+Board::Board ()
 {
     clearBoardNone();
     initDefaultBoard();
@@ -25,7 +25,12 @@ void Board::drawBoard ()
     }
 }
     
-void Board::setBoard(int initX, int initY, int destX, int destY, int side_color)
+    /*
+     * Note that setBoard should be called only after the move is completely 
+     * validated, as setBoard purely overwrites the destination coordinate and
+     * erases the initial coordinate value completely
+     */
+void Board::setBoard (int initX, int initY, int destX, int destY, int side_color)
 {
     int init_type = board[initX][initY].getPieceType();
     board[initX][initY].setPieceSide(3);

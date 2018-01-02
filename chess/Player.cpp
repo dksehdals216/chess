@@ -1,7 +1,7 @@
 
 #include "Player.h"
 
-bool Player::checkWinCondition()
+bool Player::checkWinCondition ()
 {
 
 	//todo::need to check for checkmate on check call,

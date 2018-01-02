@@ -1,22 +1,30 @@
-#include <iostream>
-#include <array>
-using namespace std;
-
-void display(std::array<std::array<int, 3>, 3> &a)
-{
-    for(int i=0; i<3; i++)
-    {
-        for(int j=0; j<3; j++)
-        {
-            cout << a[i][j] << "\t";
-        }
-        cout << endl;
-    }
-}
+#include <SFML/Graphics.hpp>
+#include <time.h>
+using namespace sf;
 
 int main()
 {
-    array<array<int, 3>, 3> n  {{{1,2,3},{4,5,6},{7,8,9}}};
-    display(n);
-    return 0;
+	RenderWindow window(VideoMode(453, 453), "The Chess");
+
+	Texture t1;
+	t1.loadFromFile("figures.png", IntRect(0, 0, 340/6, 60));
+
+	Sprite s(t1);
+
+	while (window.isOpen())
+	{
+		Event e;
+		while (window.pollEvent(e))
+		{
+			if (e.type == Event::Closed)
+				window.close();
+		}
+	
+		window.clear();
+		window.draw(s);
+		window.display();
+	}
+
+	return 0;
+
 }

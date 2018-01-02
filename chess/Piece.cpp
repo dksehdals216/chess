@@ -1,7 +1,7 @@
 
 #include "Piece.h"
 
-void Piece::setPieceType(int piece_type) 
+void Piece::setPieceType (int piece_type) 
 {
 	switch(piece_type)
 	{
@@ -36,7 +36,7 @@ void Piece::setPieceType(int piece_type)
 	}
 }
 
-void Piece::setPieceSide(int color)
+void Piece::setPieceSide (int color)
 {
 	if (color ==  1)
 	{
@@ -52,22 +52,22 @@ void Piece::setPieceSide(int color)
 	}
 }
 
-Piece::pieceType Piece::getPieceType()
+Piece::pieceType Piece::getPieceType ()
 {
 	return object_type;
 }
 
-void Piece::setPieceLife(bool life)
+void Piece::setPieceLife (bool life)
 {
 	object_life = life;
 }
 
-bool Piece::getPieceLife()
+bool Piece::getPieceLife ()
 {
 	return object_side;
 }
 
-void Piece::promote()
+void Piece::promote ()
 {
 	setPieceType(6);	//todo::rewrite this
 }
