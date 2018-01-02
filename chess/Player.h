@@ -17,12 +17,18 @@ public:
     bool checkWinCondition();
     void setTurn();
     bool getTurn();
+    void move();
 
 
 private:
 	
 	bool win_condition = false;
-    bool turn = 0;
+
+	//switch beetween turns, always have 2 players, and current turn is player who was turn
+	//set to true
+    bool turn = false;
+    int player_side;
+
 };
 
 

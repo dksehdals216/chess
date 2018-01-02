@@ -10,7 +10,7 @@ SRCS		=	\
 	Piece.cpp	\
 	Player.cpp	\
 	Move.cpp	\
-	Square.cpp	\
+	GenMoves.cpp	\
 	Game.cpp	\
 
 INCLUDDES = \
@@ -18,7 +18,7 @@ INCLUDDES = \
  	Move.h	\
 	Piece.h	\
 	Player.h	\
-	Square.h	\
+	GenMoves.h	\
 	Game.h	\
 
 OBJS		= ${SRCS:.cpp=.o}

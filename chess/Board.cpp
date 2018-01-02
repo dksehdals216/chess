@@ -6,44 +6,49 @@
 
 Board::Board()
 {
-    clearBoardNone(board);
-    initDefaultBoard(board);
-    drawBoard(board);
+    clearBoardNone();
+    initDefaultBoard();
+    drawBoard();
 }
 
 
-void Board::drawBoard(std::array<std::array<Piece, 8>, 8> &inp_board)
+void Board::drawBoard ()
 {
     std::cout << "\n" << std::endl;
     for(int i = 0; i < 8; i++)
     {
         for(int j = 0; j< 8; j++)
         {
-            std::cout << inp_board[i][j].getPieceType();
+            std::cout << board[i][j].getPieceType();
         }
         std::cout << std::endl;
     }
 }
     
-void Board::setBoard(int initX, int initY, int destX, int destY)
+void Board::setBoard(int initX, int initY, int destX, int destY, int side_color)
 {
+    int init_type = board[initX][initY].getPieceType();
+    board[initX][initY].setPieceSide(3);
+    board[initX][initY].setPieceType(0);
 
+    board[destX][destY].setPieceType(init_type);
+    board[destX][destY].setPieceSide(side_color);
 }
 
-void Board::clearBoardNone (std::array<std::array<Piece, 8>, 8> &inp_board)
+void Board::clearBoardNone ()
 {
     for(int i = 0; i < 8; i++)
     {
         for(int j = 0; j< 8; j++)
         {
-            inp_board[i][j].setPieceType(0);
-            inp_board[i][j].setPieceSide(3);   
+            board[i][j].setPieceType(0);
+            board[i][j].setPieceSide(3);   
         }
     }
 }
 
 //todo:: set pieceLife as well
-void Board::initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board)
+void Board::initDefaultBoard ()
 {
 
     int j = 4;
@@ -53,21 +58,21 @@ void Board::initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board)
     {
         if ( i < 5 )
         {
-            inp_board[0][i].setPieceSide(1);
-            inp_board[0][i].setPieceType(i+2);
+            board[0][i].setPieceSide(1);
+            board[0][i].setPieceType(i+2);
         }
         else
         {
-            inp_board[0][i].setPieceSide(1);
-            inp_board[0][i].setPieceType(j--);
+            board[0][i].setPieceSide(1);
+            board[0][i].setPieceType(j--);
         }
     }
 
     //black pawns
     for(int i = 0; i < 8; i++)
     {
-        inp_board[1][i].setPieceSide(1);
-        inp_board[1][i].setPieceType(1);
+        board[1][i].setPieceSide(1);
+        board[1][i].setPieceType(1);
     }
 
     j = 4;
@@ -77,20 +82,20 @@ void Board::initDefaultBoard(std::array<std::array<Piece, 8>, 8> &inp_board)
     {
         if ( i < 5 )
         {
-            inp_board[7][i].setPieceSide(1);
-            inp_board[7][i].setPieceType(i+2);
+            board[7][i].setPieceSide(1);
+            board[7][i].setPieceType(i+2);
         }
         else
         {
-            inp_board[7][i].setPieceSide(1);
-            inp_board[7][i].setPieceType(j--);
+            board[7][i].setPieceSide(1);
+            board[7][i].setPieceType(j--);
         }
     }
 
     //black pawns
     for(int i = 0; i < 8; i++)
     {
-        inp_board[6][i].setPieceSide(1);
-        inp_board[6][i].setPieceType(1);
+        board[6][i].setPieceSide(1);
+        board[6][i].setPieceType(1);
     }
 }
